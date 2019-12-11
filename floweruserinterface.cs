@@ -19,8 +19,8 @@ public class floweruserinterface : Form {
 	private Button pause_button = new Button();
 	private Button exit_button = new Button();
 
-	private static double MAXIMUM_FORM_WIDTH = 1000.0;
-	private static double MAXIMUM_FORM_HEIGHT = 800.0;
+	private static int MAXIMUM_FORM_WIDTH = 1000;
+	private static int MAXIMUM_FORM_HEIGHT = 800;
 	private double x_pos = 0.0;
 	private double y_pos = 0.0;
 	private double t_variable = 0.0;
@@ -122,7 +122,9 @@ public class floweruserinterface : Form {
 		graph.DrawLine(blackpen,0,350,1000,350); //x-axis
 
 		//copy the bitmap onto graph
-		graph.DrawImage(pointer_to_bitmap_in_memory,0,0,MAXIMUM_FORM_WIDTH,MAXIMUM_FORM_HEIGHT);
+		graph.DrawImage(pointer_to_bitmap_in_memory,0,0,
+				  static_cast<float>(MAXIMUM_FORM_WIDTH),
+				  static_cast<float>(MAXIMUM_FORM_HEIGHT));
 
 		base.OnPaint(e);
 
