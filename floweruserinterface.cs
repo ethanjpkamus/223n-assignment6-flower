@@ -19,14 +19,16 @@ public class floweruserinterface : Form {
 	private Button pause_button = new Button();
 	private Button exit_button = new Button();
 
-	private double MAXIMUM_FORM_WIDTH = 1000;
-	private double MAXIMUM_FORM_HEIGHT = 800;
+	private static double MAXIMUM_FORM_WIDTH = 1000.0;
+	private static double MAXIMUM_FORM_HEIGHT = 800.0;
 	private double x_pos = 0.0;
 	private double y_pos = 0.0;
 	private double t_variable = 0.0;
 	private double delta_t = 0.0;
 	private double x_offset = 500.0;
 	private double y_offset = 350.0;
+
+	private Pen blackpen = new Pen(Brushes.Black);
 
 
 	//Labels
@@ -116,8 +118,8 @@ public class floweruserinterface : Form {
 		graph.FillRectangle(Brushes.Blue,0,0,1000,100);
 		graph.FillRectangle(Brushes.Orange,0,600,1000,200);
 
-		graph.DrawLine(Pen.Black,500,100,500,600); //y-axis
-		graph.DrawLine(Pen.Black,0,350,1000,350); //x-axis
+		graph.DrawLine(blackpen,500,100,500,600); //y-axis
+		graph.DrawLine(blackpen,0,350,1000,350); //x-axis
 
 		//copy the bitmap onto graph
 		graph.DrawImage(pointer_to_bitmap_in_memory,0,0,MAXIMUM_FORM_WIDTH,MAXIMUM_FORM_HEIGHT);
