@@ -21,8 +21,8 @@ public class floweruserinterface : Form {
 
 	private static int MAXIMUM_FORM_WIDTH = 1000;
 	private static int MAXIMUM_FORM_HEIGHT = 800;
-	private float x_pos = 0.0;
-	private float y_pos = 0.0;
+	private double x_pos = 0.0;
+	private double y_pos = 0.0;
 	private double t_variable = 0.0;
 	private double delta_t = 0.0;
 	private double x_offset = 500.0;
@@ -132,7 +132,7 @@ public class floweruserinterface : Form {
 
 	protected void manage_ui(Object o, ElapsedEventArgs e){
 
-		pointer_to_graphic_surface.FillEllipse(Brushes.Red,x_pos,y_pos,1,1);
+		pointer_to_graphic_surface.FillEllipse(Brushes.Red,(float)x_pos,(float)y_pos,1,1);
 
 		x_pos_label.Text = "X-Pos: " + x_pos.ToString();
 		y_pos_label.Text = "Y-Pos: " + y_pos.ToString();
