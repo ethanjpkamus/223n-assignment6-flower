@@ -1,9 +1,11 @@
-//Author: Ethan Kamus
-//Email: ethanjpkamus@csu.fullerton.edu
+// Author: Ethan Kamus
+// Email: ethanjpkamus@csu.fullerton.edu
 
-/* The purpose of this program is to show the use of mouse click
+// Version 1: December 10, 2019
+
+/* The purpose of this program is to show how to use a Bitmap
+ * and how to animate a dot following a flower pattern
  */
-
 using System;
 using System.Windows.Forms;
 
