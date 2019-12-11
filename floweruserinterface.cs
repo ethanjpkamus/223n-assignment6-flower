@@ -68,27 +68,55 @@ public class floweruserinterface : Form {
 
 		start_button.Text = "START";
 		start_button.Size = new Size(75,30);
-		start_button.Location = new Point(10,100);
+		start_button.Location = new Point(10,620);
 		start_button.Click += new EventHandler(manage_start_button);
+		start_button.ForeColor = Color.Green;
+		start_button.BackColor = Color.White;
 
-		restart_button.Text = "RESET";
-		restart_button.Size = new Size(75,30);
-		restart_button.Location = new Point(95,100);
-		restart_button.Click += new EventHandler(update_restart_button);
+		pause_button.Text = "PAUSE";
+		pause_button.Size = new Size(75,30);
+		pause_button.Location = new Point(95,620);
+		pause_button.Click += new EventHandler(update_pause_button);
+		pause_button.ForeColor = Color.Blue;
+		pause_button.BackColor = Color.White;
 
 		exit_button.Text = "EXIT";
 		exit_button.Size = new Size(75,30);
-		exit_button.Location = new Point(180,100);
+		exit_button.Location = new Point(180,620);
 		exit_button.Click = new EventHandler(update_exit_button);
+		exit_button.ForeColor = Color.Red;
+		exit_button.BackColor = Color.White;
+
+		x_pos_label.Text = "X-Pos: 0.0";
+		x_pos_label.BackColor = Color.White;
+		x_pos_label.ForeColor = Color.Black;
+		x_pos_label.Size = new Size(75,30);
+		x_pos_label.Location = new Point(200,620);
+
+
+		y_pos_label.Text = "Y-Pos: 0.0";
+		y_pos_label.BackColor = Color.White;
+		y_pos_label.ForeColor = Color.Black;
+		y_pos_label.Size = new Size(75,30);
+		y_pos_label.Location = new Point(200,720);
 
 		//initialize the pointer to point to the bitmap so it can be modified???
 		pointer_to_graphic_surface = Graphics.FromImage(pointer_to_bitmap_in_memory);
+
+		Controls.Add(start_button);
+		Controls.Add(pause_button);
+		Controls.Add(exit_button);
+		Controls.Add(x_pos_label);
+		Controls.Add(y_pos_label);
 
 	} //end of floweruserinterface constructor
 
 	protected override void OnPaint(PaintEventArgs e){
 
 		Graphics graph = e.Graphics;
+
+		graph.FillRectangle(Brushes.Blue,0,0,1000,100);
+		graph.FillRectangle(Brushes.Orange,0,600,1000,200);
 
 		graph.DrawLine(Pen.Black,500,100,500,600); //y-axis
 		graph.DrawLine(Pen.Black,0,350,1000,350); //x-axis
