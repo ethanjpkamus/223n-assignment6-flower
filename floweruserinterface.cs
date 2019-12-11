@@ -21,8 +21,8 @@ public class floweruserinterface : Form {
 
 	private static int MAXIMUM_FORM_WIDTH = 1000;
 	private static int MAXIMUM_FORM_HEIGHT = 800;
-	private double x_pos = 0.0;
-	private double y_pos = 0.0;
+	private float x_pos = 0.0;
+	private float y_pos = 0.0;
 	private double t_variable = 0.0;
 	private double delta_t = 0.0;
 	private double x_offset = 500.0;
@@ -66,12 +66,12 @@ public class floweruserinterface : Form {
 		animation_clock.AutoReset = true;
 		animation_clock.Elapsed += new ElapsedEventHandler(manage_animation);
 
-		start_button.Text = "START";
-		start_button.Size = new Size(75,30);
-		start_button.Location = new Point(10,620);
-		start_button.Click += new EventHandler(manage_start_button);
-		start_button.ForeColor = Color.Green;
-		start_button.BackColor = Color.White;
+		go_button.Text = "START";
+		go_button.Size = new Size(75,30);
+		go_button.Location = new Point(10,620);
+		go_button.Click += new EventHandler(manage_go_button);
+		go_button.ForeColor = Color.Green;
+		go_button.BackColor = Color.White;
 
 		pause_button.Text = "PAUSE";
 		pause_button.Size = new Size(75,30);
@@ -103,7 +103,7 @@ public class floweruserinterface : Form {
 		//initialize the pointer to point to the bitmap so it can be modified???
 		pointer_to_graphic_surface = Graphics.FromImage(pointer_to_bitmap_in_memory);
 
-		Controls.Add(start_button);
+		Controls.Add(go_button);
 		Controls.Add(pause_button);
 		Controls.Add(exit_button);
 		Controls.Add(x_pos_label);
@@ -123,8 +123,8 @@ public class floweruserinterface : Form {
 
 		//copy the bitmap onto graph
 		graph.DrawImage(pointer_to_bitmap_in_memory,0,0,
-				  static_cast<float>(MAXIMUM_FORM_WIDTH),
-				  static_cast<float>(MAXIMUM_FORM_HEIGHT));
+				  (float)MAXIMUM_FORM_WIDTH,
+				  (float)MAXIMUM_FORM_HEIGHT);
 
 		base.OnPaint(e);
 
@@ -133,6 +133,10 @@ public class floweruserinterface : Form {
 	protected void manage_ui(Object o, ElapsedEventArgs e){
 
 		pointer_to_graphic_surface.FillEllipse(Brushes.Red,x_pos,y_pos,1,1);
+
+		x_pos_label.Text = "X-Pos: " + x_pos.ToString();
+		y_pos_label.Text = "Y-Pos: " + y_pos.ToString();
+
 		Invalidate();
 
 	} //end of manage_ui
@@ -165,11 +169,11 @@ public class floweruserinterface : Form {
 
 	} //end of manage_animation
 
-	protected void update_start_button(Object o, EventArgs e){
+	protected void update_go_button(Object o, EventArgs e){
 
 		animation_clock.Enabled = true;
 
-	} //end of update_start_button
+	} //end of update_go_button
 
 	protected void update_pause_button(Object o, EventArgs e){
 
