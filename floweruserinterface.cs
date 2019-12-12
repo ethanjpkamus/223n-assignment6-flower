@@ -155,8 +155,8 @@ public class floweruserinterface : Form {
 		//find x and y coordinates
 		if(delta_t >= (2 * Math.PI)){delta_t = 0.0;}
 
-		x_pos = 100 * System.Math.Cos(2.0 * (delta_t)) * System.Math.Cos(delta_t);
-		y_pos = 100 * System.Math.Cos(2.0 * (delta_t)) * System.Math.Sin(delta_t);
+		x_pos = 100 * System.Math.Cos(4.0 * (delta_t)) * System.Math.Cos(delta_t);
+		y_pos = 100 * System.Math.Cos(4.0 * (delta_t)) * System.Math.Sin(delta_t);
 
 		//move coordinate to origin drawn on screen
 		x_pos += x_offset;
