@@ -95,7 +95,6 @@ public class floweruserinterface : Form {
 		x_pos_label.Size = new Size(75,30);
 		x_pos_label.Location = new Point(400,620);
 
-
 		y_pos_label.Text = "Y-Pos: 0.0";
 		y_pos_label.BackColor = Color.Orange;
 		y_pos_label.ForeColor = Color.Black;
@@ -143,7 +142,13 @@ public class floweruserinterface : Form {
 		pointer_to_graphic_surface.FillRectangle(Brushes.Orange,0,600,1000,200);
 
 		x_pos_label.Text = "X-Pos: " + (x_pos - x_offset).ToString();
-		y_pos_label.Text = "Y-Pos: " + (y_pos - y_offset).ToString();
+		y_pos_label.Text = "Y-Pos: " + (-1*(y_pos - y_offset)).ToString();
+
+		if(!animation_clock.Enabled){
+
+			x_pos_label.Text = "X-Pos: 0";
+			y_pos_label.Text = "Y-Pos: 0";
+		}
 
 		Invalidate();
 
