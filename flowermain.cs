@@ -1,7 +1,7 @@
 // Author: Ethan Kamus
 // Email: ethanjpkamus@csu.fullerton.edu
 
-// Version 1: December 10, 2019
+// Version 1.1.0: December 10, 2019
 
 /* The purpose of this program is to show how to use a Bitmap
  * and how to animate a dot following a flower pattern
